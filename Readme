@@ -1,0 +1,7 @@
+Author:Mateusz Michalski
+Platform:Linux/Windows
+
+
+Program displays difference between two inputed dates.
+It can be displayed in console just by linking and compiling
+attached files.
