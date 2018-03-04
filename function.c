@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <math.h>
-
-struct date
-{
-    int day;
-    int month;
-    int year;
-};
-
+#include "function.h"
 
 void function (struct date *first, struct date *second,int *score,int *score2)
 {
@@ -23,7 +16,7 @@ void function (struct date *first, struct date *second,int *score,int *score2)
   int leap_years,rest_years,alldays1,i;
   int leap_years_2,rest_years_2,alldays_2;
 
-  leap_years=((*first).year-1)/4;
+  leap_years=((*first).year-1)/4;   //-1 becouse I take into account only full years, with out "uncompleate" year
   //printf("'%i''\n",leap_years);
   rest_years=((*first).year-1)-leap_years;
   //printf("'%i''\n",rest_years);
@@ -74,8 +67,7 @@ void function (struct date *first, struct date *second,int *score,int *score2)
   alldays_2+=(*second).day;
  //printf("'%i''\n",alldays_2);
 
- *score = fabs(alldays1-alldays_2)-1;  //number of days between these two days
- *score2 = fabs(alldays1-alldays_2)+1;//number of days including inputed dates
+ *score = fabs(alldays1-alldays_2);  //number of days between these two days
 
 }
 
